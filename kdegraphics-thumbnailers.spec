@@ -1,6 +1,6 @@
 Name:		kdegraphics-thumbnailers
 Summary:	Postscript PDF and DVI ThumbCreator
-Version: 4.8.2
+Version: 4.8.3
 Release: 1
 Epoch:		2
 Group:		Graphical desktop/KDE
