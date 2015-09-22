@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdegraphics-thumbnailers-15.08.0.tar.xz: 77373ba7cf9a234429b2dcb141f20d33d369f91e
+sources:
+  kdegraphics-thumbnailers-15.08.1.tar.xz: 44b19018ab645d3512f410dcb89add7b00dc1f56
