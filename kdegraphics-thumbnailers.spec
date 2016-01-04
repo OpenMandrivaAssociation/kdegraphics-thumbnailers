@@ -9,8 +9,6 @@ URL:		http://www.kde.org
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(libkdcraw) >= 0.2.0
-BuildRequires:	pkgconfig(libkexiv2) >= 0.2.0
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5KExiv2)
 BuildRequires:	cmake(KF5KDcraw)
