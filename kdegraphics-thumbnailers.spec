@@ -7,9 +7,13 @@ Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
 URL:		http://www.kde.org
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs-devel
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(libkdcraw) >= 0.2.0
 BuildRequires:	pkgconfig(libkexiv2) >= 0.2.0
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5KExiv2)
+BuildRequires:	cmake(KF5KDcraw)
 Conflicts:	kdegraphics4-common < 2:4.6.90
 Conflicts:	kdegraphics4-core   < 2:4.6.90
 Requires:	ghostscript
@@ -18,20 +22,19 @@ Requires:	ghostscript
 PostScript, PDF, DVI and RAW files ThumbCreator.
 
 %files
-%doc COPYING COPYING.LIB
-%{_kde_libdir}/kde4/gsthumbnail.so
-%{_kde_libdir}/kde4/rawthumbnail.so
-%{_kde_services}/gsthumbnail.desktop
-%{_kde_services}/rawthumbnail.desktop
+%{_qt5_plugindir}/gsthumbnail.so
+%{_qt5_plugindir}/rawthumbnail.so
+%{_datadir}/kservices5/gsthumbnail.desktop
+%{_datadir}/kservices5/rawthumbnail.desktop
 
 #----------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4 -DCMAKE_MINIMUM_REQUIRED_VERSION=2.6
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
