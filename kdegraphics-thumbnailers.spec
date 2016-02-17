@@ -1,6 +1,6 @@
 Name:		kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
-Version:	15.12.1
+Version:	15.12.2
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
