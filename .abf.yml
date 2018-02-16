@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdegraphics-thumbnailers-17.12.1.tar.xz: f4b81fd7afe93b6f5359b5b9a9f232687634f7c5
+sources:
+  kdegraphics-thumbnailers-17.12.2.tar.xz: 01d0a4ebfeb99c4e29862d7595e98fc4418e24b2
