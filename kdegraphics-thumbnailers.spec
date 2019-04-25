@@ -12,6 +12,7 @@ BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5KExiv2)
 BuildRequires:	cmake(KF5KDcraw)
+BuildRequires:	cmake(KF5Archive)
 Conflicts:	kdegraphics4-common < 2:4.6.90
 Conflicts:	kdegraphics4-core   < 2:4.6.90
 Requires:	ghostscript
@@ -30,7 +31,7 @@ PostScript, PDF, DVI and RAW files ThumbCreator.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build
