@@ -1,6 +1,6 @@
 Name:		kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
-Version:	19.11.80
+Version:	19.11.90
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
