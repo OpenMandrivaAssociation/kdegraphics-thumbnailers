@@ -13,6 +13,7 @@ BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5KExiv2)
 BuildRequires:	cmake(KF5KDcraw)
 BuildRequires:	cmake(KF5Archive)
+BuildRequires:	cmake(QMobipocket)
 Conflicts:	kdegraphics4-common < 2:4.6.90
 Conflicts:	kdegraphics4-core   < 2:4.6.90
 Requires:	ghostscript
