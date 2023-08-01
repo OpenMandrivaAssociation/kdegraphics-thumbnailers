@@ -1,7 +1,7 @@
 Name:		kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
 Version:	23.04.3
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
 URL:		http://www.kde.org
@@ -17,7 +17,6 @@ BuildRequires:	cmake(QMobipocket)
 Conflicts:	kdegraphics4-common < 2:4.6.90
 Conflicts:	kdegraphics4-core   < 2:4.6.90
 Requires:	ghostscript
-Obsoletes:	%{name} < 2:19.04.0-3
 
 %description
 PostScript, PDF, DVI and RAW files ThumbCreator.
