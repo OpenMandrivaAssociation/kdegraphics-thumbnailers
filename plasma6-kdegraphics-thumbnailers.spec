@@ -10,29 +10,28 @@ Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kdegra
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	cmake(KF6KIO)
-BuildRequires:	cmake(KF6KExiv2)
-BuildRequires:	cmake(KF6KDcraw)
+BuildRequires:	cmake(KExiv2Qt6)
+BuildRequires:	cmake(KDcrawQt6)
 BuildRequires:	cmake(KF6Archive)
-BuildRequires:	cmake(QMobipocket)
-Conflicts:	kdegraphics4-common < 2:4.6.90
-Conflicts:	kdegraphics4-core   < 2:4.6.90
+BuildRequires:	cmake(QMobipocket6)
 Requires:	ghostscript
 
 %description
 PostScript, PDF, DVI and RAW files ThumbCreator.
 
 %files
-%{_qt6_plugindir}/kf6/thumbcreator/blenderthumbnail.so
-%{_qt6_plugindir}/kf6/thumbcreator/gsthumbnail.so
-%{_qt6_plugindir}/kf6/thumbcreator/rawthumbnail.so
-%{_qt6_plugindir}/kf6/thumbcreator/mobithumbnail.so
 %{_datadir}/metainfo/org.kde.kdegraphics-thumbnailers.metainfo.xml
+%{_qtdir}/plugins/kf6/thumbcreator/blenderthumbnail.so
+%{_qtdir}/plugins/kf6/thumbcreator/gsthumbnail.so
+%{_qtdir}/plugins/kf6/thumbcreator/mobithumbnail.so
+%{_qtdir}/plugins/kf6/thumbcreator/rawthumbnail.so
 
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n kdegraphics-thumbnailers-%{version}
 %cmake \
+	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
 
