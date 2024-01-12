@@ -1,6 +1,6 @@
 Name:		plasma6-kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
