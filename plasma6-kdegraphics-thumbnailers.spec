@@ -1,12 +1,19 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
 URL:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/graphics/kdegraphics-thumbnailers/-/archive/%{gitbranch}/kdegraphics-thumbnailers-%{gitbranchd}.tar.bz2#/kdegraphics-thumbnailers-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kdegraphics-thumbnailers-%{version}.tar.xz
+%endif
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	cmake(KF6KIO)
@@ -29,7 +36,7 @@ PostScript, PDF, DVI and RAW files ThumbCreator.
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kdegraphics-thumbnailers-%{version}
+%autosetup -p1 -n kdegraphics-thumbnailers-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
