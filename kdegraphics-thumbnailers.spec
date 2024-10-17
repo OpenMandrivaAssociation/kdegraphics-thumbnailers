@@ -4,7 +4,7 @@ Version:	24.02.0
 Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
-URL:		http://www.kde.org
+URL:		https://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
