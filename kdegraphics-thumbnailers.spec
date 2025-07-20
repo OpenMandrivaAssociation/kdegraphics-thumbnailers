@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		kdegraphics-thumbnailers
 Summary:	Postscript, PDF, DVI and RAW ThumbCreator
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2
@@ -23,6 +23,12 @@ BuildRequires:	cmake(KF6Archive)
 BuildRequires:	cmake(QMobipocket6)
 Requires:	ghostscript
 
+%rename plasma6-kdegraphics-thumbnailers
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+BuildOption:	-DQT_MAJOR_VERSION=6
+
 %description
 PostScript, PDF, DVI and RAW files ThumbCreator.
 
@@ -32,18 +38,3 @@ PostScript, PDF, DVI and RAW files ThumbCreator.
 %{_qtdir}/plugins/kf6/thumbcreator/gsthumbnail.so
 %{_qtdir}/plugins/kf6/thumbcreator/mobithumbnail.so
 %{_qtdir}/plugins/kf6/thumbcreator/rawthumbnail.so
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kdegraphics-thumbnailers-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
